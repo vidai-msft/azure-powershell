@@ -61,7 +61,8 @@ RequiredAssemblies = 'Microsoft.Azure.Management.Synapse.dll',
                'Azure.Analytics.Synapse.AccessControl.dll', 
                'Azure.Analytics.Synapse.Artifacts.dll', 
                'Azure.Analytics.Synapse.ManagedPrivateEndpoints.dll', 
-               'Microsoft.DataTransfer.Gateway.Encryption.dll'
+               'Microsoft.DataTransfer.Gateway.Encryption.dll',
+               'Synapse.Autorest\bin\Az.Synapse.private.dll'
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
 # ScriptsToProcess = @()
@@ -70,13 +71,38 @@ RequiredAssemblies = 'Microsoft.Azure.Management.Synapse.dll',
 # TypesToProcess = @()
 
 # Format files (.ps1xml) to be loaded when importing this module
-FormatsToProcess = 'Synapse.format.ps1xml'
+FormatsToProcess = 'Synapse.format.ps1xml', 'Synapse.Autorest\Az.Synapse.format.ps1xml'
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-NestedModules = @('Microsoft.Azure.PowerShell.Cmdlets.Synapse.dll')
+NestedModules = @('Az.Synapse.psm1','Synapse.Autorest\Az.Synapse.psm1')
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @()
+FunctionsToExport = 'Add-AzSynapseKustoPoolLanguageExtension', 'Get-AzSynapseKustoPool', 
+               'Get-AzSynapseKustoPoolAttachedDatabaseConfiguration', 
+               'Get-AzSynapseKustoPoolDatabase', 
+               'Get-AzSynapseKustoPoolDatabasePrincipalAssignment', 
+               'Get-AzSynapseKustoPoolDataConnection', 
+               'Get-AzSynapseKustoPoolFollowerDatabase', 
+               'Get-AzSynapseKustoPoolLanguageExtension', 
+               'Get-AzSynapseKustoPoolPrincipalAssignment', 
+               'Get-AzSynapseKustoPoolSku', 
+               'Invoke-AzSynapseDetachKustoPoolFollowerDatabase', 
+               'New-AzSynapseKustoPool', 
+               'New-AzSynapseKustoPoolAttachedDatabaseConfiguration', 
+               'New-AzSynapseKustoPoolDatabase', 
+               'New-AzSynapseKustoPoolDatabasePrincipalAssignment', 
+               'New-AzSynapseKustoPoolDataConnection', 
+               'New-AzSynapseKustoPoolPrincipalAssignment', 
+               'Remove-AzSynapseKustoPool', 
+               'Remove-AzSynapseKustoPoolAttachedDatabaseConfiguration', 
+               'Remove-AzSynapseKustoPoolDatabase', 
+               'Remove-AzSynapseKustoPoolDatabasePrincipalAssignment', 
+               'Remove-AzSynapseKustoPoolDataConnection', 
+               'Remove-AzSynapseKustoPoolLanguageExtension', 
+               'Remove-AzSynapseKustoPoolPrincipalAssignment', 
+               'Start-AzSynapseKustoPool', 'Stop-AzSynapseKustoPool', 
+               'Update-AzSynapseKustoPool', 'Update-AzSynapseKustoPoolDatabase', 
+               'Update-AzSynapseKustoPoolDataConnection'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-AzSynapseSparkJob', 'Stop-AzSynapseSparkJob', 
