@@ -20,6 +20,8 @@
 
 -->
 ## Upcoming Release
+
+## Version 4.18.0
 * Added support for proxy and debug settings for VM Extension for SAP (AEM)
 * Updated New-AzGalleryImageVersion to take in the 'Encryption' property correctly from '-TargetRegion' parameter. 
 * Updated Set-AzVmBootDiagnostic to default to managed storage account if not provided.
