@@ -13,34 +13,83 @@
 
 $script:AzPSCommonParameters = @("-Break", "-Confirm", "-Debug", "-DefaultProfile", "-ErrorAction", "-ErrorVariable", "-HttpPipelineAppend", "-HttpPipelinePrepend", "-InformationAction", "-InformationVariable",
     "-OutBuffer", "-OutVariable", "-PassThru", "-PipelineVariable", "-Proxy", "-ProxyCredential", "-ProxyUseDefaultCredentials", "-Verbose", "-WarningAction", "-WarningVariable", "-WhatIf")
-function Get-TestCoverageModuleDetails {
-    [CmdletBinding()]
-    [OutputType([hashtable])]
+
+function Add-TestCoverageAdditionalInfo {
+    [CmdletBinding(DefaultParameterSetName = "ByFile")]
     param (
-        [Parameter(Mandatory)]
+        [Parameter(Mandatory, ParameterSetName = "ByLocation")]
         [ValidateNotNull()]
-        $Module
+        [ValidateScript({ Test-Path -LiteralPath $_ -PathType Container })]
+        [string[]] $DataLocation,
+
+        [Parameter(Mandatory, ParameterSetName = "ByFile")]
+        [ValidateNotNull()]
+        [ValidateScript({ (Test-Path -LiteralPath $_ -PathType Leaf) -and ($_ -like "*.csv") })]
+        [string[]] $CsvFile,
+
+        [Parameter(Mandatory)]
+        [ValidateSet("CITest", "SmokeTest", "LiveTest")]
+        [string] $Source,
+
+        [Parameter(Mandatory)]
+        [ValidateNotNullOrEmpty()]
+        [string] $BuildId
     )
 
-    [hashtable] $ModuleDetails = @{}
-
-    $moduleCommands = $Module.ExportedCmdlets.Keys + $Module.ExportedFunctions.Keys
-    $totalCommands = $moduleCommands.Count
-
-    $totalParameterSets = 0
-    $totalParameters = 0
-    $moduleCommands | ForEach-Object {
-        $command = Get-Command -Name $_
-        $totalParameterSets += $command.ParameterSets.Count
-
-        $commandParams = $command.Parameters
-        $commandParams.Keys | ForEach-Object {
-            if ($_ -notin $script:AzPSCommonParameters) {
-                $totalParameters += $commandParams[$_].ParameterSets.Count
-            }
+    if ($PSCmdlet.ParameterSetName -eq "ByLocation") {
+        $cvgDir = Join-Path -Path $DataLocation -ChildPath "TestCoverageAnalysis" | Join-Path -ChildPath "Raw"
+        if (Test-Path -LiteralPath $cvgDir -PathType Container) {
+            $CsvFile = Get-ChildItem -Path $cvgDir -Filter "*.csv" -File | Select-Object -ExpandProperty FullName
+        }
+        else {
+            $CsvFile = @()
+            Write-Host "##[warning]No test coverage data was found."
         }
     }
 
-    $ModuleDetails = @{ TotalCommands = $totalCommands; TotalParameterSets = $totalParameterSets; TotalParameters = $totalParameters }
-    $ModuleDetails
+    $CsvFile | ForEach-Object {
+        $moduleName = (Get-Item -Path $_).BaseName
+        $simpleModuleName = $moduleName.Substring(3)
+        $module = Get-Module -Name $moduleName -ListAvailable
+        if ($null -eq $module) {
+            $module = Get-Module -Name $moduleName
+        }
+
+        $moduleCommands = $module.ExportedCmdlets.Keys + $module.ExportedFunctions.Keys
+        $totalCommands = $moduleCommands.Count
+
+        $totalParameterSets = 0
+        $totalParameters = 0
+        $moduleCommands | ForEach-Object {
+            $command = Get-Command -Name $_
+            $totalParameterSets += $command.ParameterSets.Count
+
+            $commandParams = $command.Parameters
+            $commandParams.Keys | ForEach-Object {
+                if ($_ -notin $script:AzPSCommonParameters) {
+                    $totalParameters += $commandParams[$_].ParameterSets.Count
+                }
+            }
+        }
+
+        $moduleDetails = @{ TotalCommands = $totalCommands; TotalParameterSets = $totalParameterSets; TotalParameters = $totalParameters }
+
+        (Import-Csv -Path $_) |
+        Select-Object `
+        @{ Name = "Source"; Expression = { $Source } }, `
+        @{ Name = "BuildId"; Expression = { "$BuildId" } }, `
+        @{ Name = "Module"; Expression = { "$simpleModuleName" } }, `
+        @{ Name = "CommandName"; Expression = { $_.CommandName } }, `
+        @{ Name = "TotalCommands"; Expression = { "$($moduleDetails['TotalCommands'])" } }, `
+        @{ Name = "ParameterSetName"; Expression = { $_.ParameterSetName } }, `
+        @{ Name = "TotalParameterSets"; Expression = { "$($moduleDetails['TotalParameterSets'])" } }, `
+        @{ Name = "Parameters"; Expression = { $_.Parameters } }, `
+        @{ Name = "TotalParameters"; Expression = { "$($moduleDetails['TotalParameters'])" } }, `
+        @{ Name = "SourceScript"; Expression = { $_.SourceScript } }, `
+        @{ Name = "LineNumber"; Expression = { $_.LineNumber } }, `
+        @{ Name = "StartDateTime"; Expression = { $_.StartDateTime } }, `
+        @{ Name = "EndDateTime"; Expression = { $_.EndDateTime } }, `
+        @{ Name = "IsSuccess"; Expression = { $_.IsSuccess } } |
+        Export-Csv -Path $_ -Encoding utf8 -NoTypeInformation -Force
+    }
 }

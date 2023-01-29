@@ -60,6 +60,26 @@ steps:
   displayName: 'Test for AutoGen Modules With PowerShell Core'
   condition: and(succeeded(), eq('${{ parameters.testTarget }}', 'Test'))
 
+- task: PowerShell@2
+  displayName: Process test coverage data
+  inputs:
+    pwsh: true
+    targetType: filePath
+    filePath: ./tools/TestFx/Coverage/ProcessCITestCoverage.ps1
+    arguments: -RepoLocation $(Build.SourcesDirectory) -DataLocation $(TestCoverageLocation) -BuildId $(Build.BuildId)
+  condition: succeeded()
+
+- task: PowerShell@2
+  displayName: Save test coverage data to Kusto
+  inputs:
+    pwsh: true
+    targetType: filePath
+    filePath: ./tools/TestFx/Coverage/SaveCITestCoverage.ps1
+    arguments: $(KustoServicePrincipalTenantId) $(KustoServicePrincipalId) $env:KustoServicePrincipalSecret $(KustoClusterName) $(KustoClusterRegion) $(TestCoverageDatabaseName) $(TestCoverageTableName) $(TestCoverageLocation)
+  env:
+    KustoServicePrincipalSecret: $(KustoServicePrincipalSecret)
+  condition: succeeded()
+
 - task: PublishTestResults@2
   inputs:
     testRunner: VSTest
