@@ -18,4 +18,11 @@ Describe 'Get-AzElasticDeploymentInfo' {
     It 'List' {
         { Get-AzElasticDeploymentInfo -ResourceGroupName $env.resourceGroup -Name $env.elasticName01 } | Should -Not -Throw
     }
+
+    It 'ListViaIdentityMonitor' {
+        {
+            $monitor = Get-AzElasticMonitor -ResourceGroupName $env.resourceGroup -Name $env.elasticName01
+            Get-AzElasticDeploymentInfo -MonitorInputObject $monitor
+        } | Should -Not -Throw
+    }
 }

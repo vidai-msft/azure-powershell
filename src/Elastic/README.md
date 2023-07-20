@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the Elastic service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Module Requirements
-- [Az.Accounts module](https://www.powershellgallery.com/packages/Az.Accounts/), version 2.2.3 or greater
+- [Az.Accounts module](https://www.powershellgallery.com/packages/Az.Accounts/), version 2.7.5 or greater
 
 ## Authentication
 AutoRest does not generate authentication code for the module. Authentication is handled via Az.Accounts by altering the HTTP payload before it is sent.
@@ -31,21 +31,21 @@ For information on how to develop for `Az.Elastic`, see [how-to.md](how-to.md).
 
 ``` yaml
 # lock the commit
-branch: eee9cbba738edde2ea48ea0c826f84619e2561df
+branch: 73d8ea03558929411b9f2e6be533e63409a2252c
 require:
   - $(this-folder)/../readme.azure.noprofile.md
 input-file:
-  - $(repo)/specification/elastic/resource-manager/Microsoft.Elastic/stable/2020-07-01/elastic.json
+  - $(repo)/specification/elastic/resource-manager/Microsoft.Elastic/stable/2023-06-01/elastic.json
+
+use-extension:
+  "@autorest/powershell": "4.x"
 
 title: Elastic
 module-version: 0.1.0
 subject-prefix: $(service-name)
 
-identity-correction-for-post: true
-resourcegroup-append: true
-
 directive:
-  # Swagger issue that the ProvisioningState should readonly.
+  # Swagger issue that the ProvisioningState should be readonly.
   - from: swagger-document
     where: $.definitions.MonitorProperties.properties.provisioningState
     transform: >-
@@ -63,6 +63,15 @@ directive:
           "$ref": "#/definitions/ProvisioningState"
         }
 
+  # Disable LRO for New-AzElasticCreateAndAssociateIPFilter and New-AzElasticCreateAndAssociatePlFilter
+  - from: swagger-document
+    where: $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Elastic/monitors/{monitorName}/createAndAssociateIPFilter"].post
+    transform: $["x-ms-long-running-operation"] = false
+
+  - from: swagger-document
+    where: $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Elastic/monitors/{monitorName}/createAndAssociatePLFilter"].post
+    transform: $["x-ms-long-running-operation"] = false
+
   - where:
       verb: Set
     remove: true
@@ -74,26 +83,19 @@ directive:
     remove: true
 
   # Only name allowed for a tag rule is default.
-  - where: 
+  - where:
       verb: Get
       subject: TagRule
-      variant: List
+      variant: ^List$|^GetViaIdentityMonitor$
     remove: true
   - where:
-      verb: Get|New
+      verb: Get|New|Update
       subject: TagRule
       parameter-name: RuleSetName
     hide: true
     set:
       default:
         script: '"default"'
-
-  - where:
-      verb: Get|New|Update|Remove|Invoke
-      subject: DeploymentInfo|MonitoredResource|VMHost|DetailVMIngestion|VMCollection
-      parameter-name: MonitorName
-    set:
-      parameter-name: Name
 
   - where:
       parameter-name: SkuName
@@ -126,6 +128,7 @@ directive:
           - Name
           - ProvisioningState
 
-  # - model-cmdlet:
-  #   - FilteringTag
+  - model-cmdlet:
+    - model-name: FilteringTag
+      model-cmdlet: New-AzElasticFilteringTagObject
 ```

@@ -20,13 +20,12 @@ Describe 'Remove-AzElasticMonitor' {
         Remove-AzElasticMonitor -ResourceGroupName $env.resourceGroup -Name $env.elasticName04
         $elasticList = Get-AzElasticMonitor -ResourceGroupName $env.resourceGroup
         $elasticList.Name | Should -Not -Contain $env.elasticName04
-        
     }
 
     It 'DeleteViaIdentity' {
         $elastic = New-AzElasticMonitor -ResourceGroupName $env.resourceGroup -Name $env.elasticName05 -Location $env.location -Sku $env.sku -UserInfoEmailAddress $env.userEmail
         Remove-AzElasticMonitor -InputObject $elastic
         $elasticList = Get-AzElasticMonitor -ResourceGroupName $env.resourceGroup
-        $elasticList.Name | Should -Not -Contain $env.elasticName05   
+        $elasticList.Name | Should -Not -Contain $env.elasticName05
      }
 }

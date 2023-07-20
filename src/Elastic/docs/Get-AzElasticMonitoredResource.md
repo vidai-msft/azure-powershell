@@ -13,7 +13,7 @@ List the resources currently being monitored by the Elastic monitor resource.
 ## SYNTAX
 
 ```
-Get-AzElasticMonitoredResource -Name <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
+Get-AzElasticMonitoredResource -MonitorName <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
  [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -24,15 +24,23 @@ List the resources currently being monitored by the Elastic monitor resource.
 
 ### Example 1: List the resources currently being monitored by the Elastic monitor resource
 ```powershell
-Get-AzElasticMonitoredResource -ResourceGroupName azure-elastic-test -Name elastic-pwsh02
+Get-AzElasticMonitoredResource -ResourceGroupName ElasticResourceGroup01 -MonitorName Monitor01
 ```
 
-This command lists the resources currently being monitored by the Elastic monitor resource.
+List the resources currently being monitored by the Elastic monitor resource.
+
+### Example 2: List the resources currently being monitored by the Elastic monitor resource via pipeline
+```powershell
+Get-AzElasticMonitoredResource -ResourceGroupName ElasticResourceGroup01 -MonitorName Monitor01
+```
+
+List the resources currently being monitored by the Elastic monitor resource.
 
 ## PARAMETERS
 
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.
+The DefaultProfile parameter is not functional.
+Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -46,7 +54,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name
+### -MonitorName
 Monitor resource name
 
 ```yaml
@@ -131,7 +139,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Elastic.Models.Api20200701.IMonitoredResource
+### Microsoft.Azure.PowerShell.Cmdlets.Elastic.Models.Api20230601.IMonitoredResource
 
 ## NOTES
 

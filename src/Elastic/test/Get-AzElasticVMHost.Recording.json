@@ -1,17 +1,17 @@
 {
-  "Get-AzElasticVMHost+[NoContext]+List+$POST+https://management.azure.com/subscriptions/5a611eed-e33a-44e8-92b1-3f6bf835905e/resourceGroups/elastic-rg-3eytki/providers/Microsoft.Elastic/monitors/elastic-d49xjm/listVMHost?api-version=2020-07-01+1": {
+  "Get-AzElasticVMHost+[NoContext]+List+$POST+https://management.azure.com/subscriptions/cff37b56-870a-448f-a2fb-1a89235d4d32/resourceGroups/elastic-rg-phb54j/providers/Microsoft.Elastic/monitors/elastic-anh81l/listVMHost?api-version=2023-06-01+1": {
     "Request": {
       "Method": "POST",
-      "RequestUri": "https://management.azure.com/subscriptions/5a611eed-e33a-44e8-92b1-3f6bf835905e/resourceGroups/elastic-rg-3eytki/providers/Microsoft.Elastic/monitors/elastic-d49xjm/listVMHost?api-version=2020-07-01",
+      "RequestUri": "https://management.azure.com/subscriptions/cff37b56-870a-448f-a2fb-1a89235d4d32/resourceGroups/elastic-rg-phb54j/providers/Microsoft.Elastic/monitors/elastic-anh81l/listVMHost?api-version=2023-06-01",
       "Content": null,
       "isContentBase64": false,
       "Headers": {
-        "x-ms-unique-id": [ "1" ],
-        "x-ms-client-request-id": [ "f7ffab95-3c85-497e-92d3-7e3ac6ac5a80" ],
+        "x-ms-unique-id": [ "37" ],
+        "x-ms-client-request-id": [ "5faaf83b-5c9b-4d47-b35c-a39a5fc76f2e" ],
         "CommandName": [ "Get-AzElasticVMHost" ],
         "FullCommandName": [ "Get-AzElasticVMHost_List" ],
         "ParameterSetName": [ "__AllParameterSets" ],
-        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "User-Agent": [ "AzurePowershell/v0.0.0", "PSVersion/v7.3.5", "Az.Elastic/0.1.0" ],
         "Authorization": [ "[Filtered]" ]
       },
       "ContentHeaders": {
@@ -22,15 +22,16 @@
       "Headers": {
         "Cache-Control": [ "no-cache" ],
         "Pragma": [ "no-cache" ],
-        "x-ms-ratelimit-remaining-subscription-writes": [ "1199" ],
+        "x-ms-ratelimit-remaining-subscription-writes": [ "1195" ],
         "x-ms-providerhub-traffic": [ "True" ],
         "Request-Context": [ "appId=cid-v1:13f6b276-8851-4983-9417-68bc36807add" ],
+        "mise-correlation-id": [ "68fcb22d-3423-49eb-8de5-4f0e00213b0e" ],
         "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
         "X-Content-Type-Options": [ "nosniff" ],
-        "x-ms-request-id": [ "9757ea11-ea67-45d6-afd8-299854385724" ],
-        "x-ms-correlation-request-id": [ "0691bf47-4756-4b1a-8bed-7fd29c0fa9a6" ],
-        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20210906T082520Z:0691bf47-4756-4b1a-8bed-7fd29c0fa9a6" ],
-        "Date": [ "Mon, 06 Sep 2021 08:25:20 GMT" ]
+        "x-ms-request-id": [ "23f6b90b-c45a-447e-aff4-e9e453fc0898" ],
+        "x-ms-correlation-request-id": [ "0330cf46-ae7a-4f56-993d-77fe708efe8a" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20230711T070810Z:0330cf46-ae7a-4f56-993d-77fe708efe8a" ],
+        "Date": [ "Tue, 11 Jul 2023 07:08:09 GMT" ]
       },
       "ContentHeaders": {
         "Content-Length": [ "28" ],

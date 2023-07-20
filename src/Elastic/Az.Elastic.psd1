@@ -11,7 +11,7 @@
   DotNetFrameworkVersion = '4.7.2'
   RequiredAssemblies = './bin/Az.Elastic.private.dll'
   FormatsToProcess = './Az.Elastic.format.ps1xml'
-  FunctionsToExport = 'Get-AzElasticDeploymentInfo', 'Get-AzElasticDetailVMIngestion', 'Get-AzElasticMonitor', 'Get-AzElasticMonitoredResource', 'Get-AzElasticTagRule', 'Get-AzElasticVMHost', 'New-AzElasticFilteringTagObject', 'New-AzElasticMonitor', 'New-AzElasticTagRule', 'Remove-AzElasticMonitor', 'Update-AzElasticMonitor', 'Update-AzElasticVMCollection', '*'
+  FunctionsToExport = 'Get-AzElasticAllTrafficFilter', 'Get-AzElasticDeploymentInfo', 'Get-AzElasticDetailUpgradableVersion', 'Get-AzElasticDetailVMIngestion', 'Get-AzElasticListAssociatedTrafficFilter', 'Get-AzElasticMonitor', 'Get-AzElasticMonitoredResource', 'Get-AzElasticOrganizationApiKey', 'Get-AzElasticTagRule', 'Get-AzElasticVersion', 'Get-AzElasticVMHost', 'Join-AzElasticAssociateTrafficFilter', 'New-AzElasticCreateAndAssociateIPFilter', 'New-AzElasticCreateAndAssociatePlFilter', 'New-AzElasticExternalUser', 'New-AzElasticMonitor', 'New-AzElasticTagRule', 'Remove-AzElasticDetachAndDeleteTrafficFilter', 'Remove-AzElasticMonitor', 'Remove-AzElasticTrafficFilter', 'Update-AzElasticDetachTrafficFilter', 'Update-AzElasticExternalUser', 'Update-AzElasticMonitor', 'Update-AzElasticVMCollection', '*'
   AliasesToExport = '*'
   PrivateData = @{
     PSData = @{

@@ -1,8 +1,13 @@
 ### Example 1: List the resources currently being monitored by the Elastic monitor resource
 ```powershell
-Get-AzElasticMonitoredResource -ResourceGroupName azure-elastic-test -Name elastic-pwsh02
+Get-AzElasticMonitoredResource -ResourceGroupName ElasticResourceGroup01 -MonitorName Monitor01
 ```
 
-This command lists the resources currently being monitored by the Elastic monitor resource.
+List the resources currently being monitored by the Elastic monitor resource.
 
+### Example 2: List the resources currently being monitored by the Elastic monitor resource via pipeline
+```powershell
+Get-AzElasticMonitoredResource -ResourceGroupName ElasticResourceGroup01 -MonitorName Monitor01
+```
 
+List the resources currently being monitored by the Elastic monitor resource.

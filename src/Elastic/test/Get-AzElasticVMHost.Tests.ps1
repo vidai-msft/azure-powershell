@@ -18,4 +18,11 @@ Describe 'Get-AzElasticVMHost' {
     It 'List' {
         { Get-AzElasticVMHost -ResourceGroupName $env.resourceGroup -Name $env.elasticName01 } | Should -Not -Throw
     }
+
+    It 'ListViaIdentityMonitor' {
+        {
+            $monitor = Get-AzElasticMonitor -ResourceGroupName $env.resourceGroup -Name $env.elasticName01
+            Get-AzElasticVMHost -MonitorInputObject $monitor
+        } | Should -Not -Throw
+    }
 }

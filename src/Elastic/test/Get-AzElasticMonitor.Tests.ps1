@@ -16,7 +16,7 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-AzElasticMonitor'))
 
 Describe 'Get-AzElasticMonitor' {
     It 'List' {
-        $elasticList = Get-AzElasticMonitor 
+        $elasticList = Get-AzElasticMonitor
         $elasticList.Count | Should -BeGreaterOrEqual 2
     }
 
@@ -28,11 +28,5 @@ Describe 'Get-AzElasticMonitor' {
     It 'List1' {
         $elasticList = Get-AzElasticMonitor -ResourceGroup $env.resourceGroup
         $elasticList.Count | Should -BeGreaterOrEqual 2
-    }
-
-    It 'GetViaIdentity' {
-        $elastic = Get-AzElasticMonitor -ResourceGroupName $env.resourceGroup -Name $env.elasticName01
-        Get-AzElasticMonitor -InputObject $elastic
-        $elastic.Name | Should -Be $env.elasticName01
     }
 }

@@ -1,9 +1,9 @@
 {
-  "Update-AzElasticMonitor+[NoContext]+UpdateExpanded+$PATCH+https://management.azure.com/subscriptions/5a611eed-e33a-44e8-92b1-3f6bf835905e/resourceGroups/elastic-rg-3eytki/providers/Microsoft.Elastic/monitors/elastic-d49xjm?api-version=2020-07-01+1": {
+  "Update-AzElasticMonitor+[NoContext]+UpdateExpanded+$PATCH+https://management.azure.com/subscriptions/cff37b56-870a-448f-a2fb-1a89235d4d32/resourceGroups/elastic-rg-phb54j/providers/Microsoft.Elastic/monitors/elastic-anh81l?api-version=2023-06-01+1": {
     "Request": {
       "Method": "PATCH",
-      "RequestUri": "https://management.azure.com/subscriptions/5a611eed-e33a-44e8-92b1-3f6bf835905e/resourceGroups/elastic-rg-3eytki/providers/Microsoft.Elastic/monitors/elastic-d49xjm?api-version=2020-07-01",
-      "Content": "{\r\n  \"tags\": {\r\n    \"key03\": \"3\",\r\n    \"key02\": \"2\",\r\n    \"key01\": \"1\"\r\n  }\r\n}",
+      "RequestUri": "https://management.azure.com/subscriptions/cff37b56-870a-448f-a2fb-1a89235d4d32/resourceGroups/elastic-rg-phb54j/providers/Microsoft.Elastic/monitors/elastic-anh81l?api-version=2023-06-01",
+      "Content": "{\r\n  \"tags\": {\r\n    \"key01\": \"1\",\r\n    \"key02\": \"2\",\r\n    \"key03\": \"3\"\r\n  }\r\n}",
       "isContentBase64": false,
       "Headers": {
       },
@@ -17,38 +17,38 @@
       "Headers": {
         "Cache-Control": [ "no-cache" ],
         "Pragma": [ "no-cache" ],
-        "ETag": [ "\"0e006b46-0000-0800-0000-6135d44f0000\"" ],
-        "x-ms-ratelimit-remaining-subscription-writes": [ "1199" ],
+        "ETag": [ "\"9f011aeb-0000-0100-0000-64ad039b0000\"" ],
+        "x-ms-ratelimit-remaining-subscription-writes": [ "1191" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20230711T072412Z:2ff44396-4bef-4a9b-8b78-a8ad57437e89" ],
         "x-ms-providerhub-traffic": [ "True" ],
-        "x-ms-request-id": [ "e5d38440-2e13-4695-a945-74bf2485d2a5" ],
-        "x-ms-correlation-request-id": [ "3591ee73-087f-4e08-9a64-f108880b3e33" ],
-        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20210906T084153Z:3591ee73-087f-4e08-9a64-f108880b3e33" ],
+        "x-ms-request-id": [ "e3c0a894-c4a8-4762-913b-6fce995dc848" ],
+        "x-ms-correlation-request-id": [ "2ff44396-4bef-4a9b-8b78-a8ad57437e89" ],
         "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
         "X-Content-Type-Options": [ "nosniff" ],
-        "Date": [ "Mon, 06 Sep 2021 08:41:53 GMT" ]
+        "Date": [ "Tue, 11 Jul 2023 07:24:11 GMT" ]
       },
       "ContentHeaders": {
-        "Content-Length": [ "1486" ],
+        "Content-Length": [ "1515" ],
         "Content-Type": [ "application/json; charset=utf-8" ],
         "Expires": [ "-1" ]
       },
-      "Content": "{\"id\":\"/subscriptions/5a611eed-e33a-44e8-92b1-3f6bf835905e/resourceGroups/elastic-rg-3eytki/providers/Microsoft.Elastic/monitors/elastic-d49xjm\",\"name\":\"elastic-d49xjm\",\"type\":\"microsoft.elastic/monitors\",\"sku\":{\"name\":\"ess-monthly-consumption_Monthly\"},\"location\":\"westus2\",\"tags\":{\"key03\":\"3\",\"key02\":\"2\",\"key01\":\"1\"},\"systemData\":{\"createdBy\":\"v-diya@microsoft.com\",\"createdByType\":\"User\",\"createdAt\":\"2021-09-06T07:05:30.881183Z\",\"lastModifiedBy\":\"v-diya@microsoft.com\",\"lastModifiedByType\":\"User\",\"lastModifiedAt\":\"2021-09-06T08:41:50.9789669Z\"},\"properties\":{\"provisioningState\":\"Succeeded\",\"monitoringStatus\":\"Enabled\",\"elasticProperties\":{\"elasticCloudUser\":{\"emailAddress\":\"v-diya@microsoft.com\",\"id\":\"1336629777\",\"elasticCloudSsoDefaultUrl\":\"https://cloud.elastic.co\"},\"elasticCloudDeployment\":{\"name\":\"elastic-d49xjm\",\"deploymentId\":\"5db78d5cb624424eb1283d8d7b4a8150\",\"azureSubscriptionId\":\"5a611eed-e33a-44e8-92b1-3f6bf835905e\",\"elasticsearchRegion\":\"azure-westus2\",\"elasticsearchServiceUrl\":\"https://56054f34d7c745288051e21c9f0a8962.westus2.azure.elastic-cloud.com:9243\",\"kibanaServiceUrl\":\"https://0df5b67b2f2a46e2b4c1523b52ed2e8b.westus2.azure.elastic-cloud.com:9243\",\"kibanaSsoUrl\":\"/sso/v1/go/ec:1336629777:kibana-elastic-d49xjm?acs=https://elastic-d49xjm.kb.westus2.azure.elastic-cloud.com:9243/api/security/saml/callback\u0026sp_login_url=https://elastic-d49xjm.kb.westus2.azure.elastic-cloud.com:9243\"}},\"liftrResourceCategory\":\"MonitorLogs\",\"liftrResourcePreference\":0}}",
+      "Content": "{\"id\":\"/subscriptions/cff37b56-870a-448f-a2fb-1a89235d4d32/resourceGroups/elastic-rg-phb54j/providers/Microsoft.Elastic/monitors/elastic-anh81l\",\"name\":\"elastic-anh81l\",\"type\":\"microsoft.elastic/monitors\",\"sku\":{\"name\":\"ess-monthly-consumption_Monthly\"},\"location\":\"eastus\",\"tags\":{\"key01\":\"1\",\"key02\":\"2\",\"key03\":\"3\",\"PolicyTest\":\"Demo\"},\"systemData\":{\"createdBy\":\"vidai@microsoft.com\",\"createdByType\":\"User\",\"createdAt\":\"2023-07-11T06:58:17.038016Z\",\"lastModifiedBy\":\"vidai@microsoft.com\",\"lastModifiedByType\":\"User\",\"lastModifiedAt\":\"2023-07-11T07:24:10.8854777Z\"},\"properties\":{\"provisioningState\":\"Succeeded\",\"monitoringStatus\":\"Enabled\",\"elasticProperties\":{\"elasticCloudUser\":{\"emailAddress\":\"vidai@microsoft.com\",\"id\":\"1591103226\",\"elasticCloudSsoDefaultUrl\":\"https://cloud.elastic.co\"},\"elasticCloudDeployment\":{\"name\":\"elastic-anh81l\",\"deploymentId\":\"a57239e7425ec918b507ce1751649b33\",\"azureSubscriptionId\":\"cff37b56-870a-448f-a2fb-1a89235d4d32\",\"elasticsearchRegion\":\"azure-eastus\",\"elasticsearchServiceUrl\":\"https://6c6f03a33cb142648af865e14c9f517f.eastus.azure.elastic-cloud.com\",\"kibanaServiceUrl\":\"https://b673d1c749e343e3941d70dae9c8d035.eastus.azure.elastic-cloud.com:9243\",\"kibanaSsoUrl\":\"/sso/v1/go/ec:1836023263:kibana-elastic-anh81l?acs=https://elastic-anh81l.kb.eastus.azure.elastic-cloud.com:9243/api/security/saml/callback\u0026sp_login_url=https://elastic-anh81l.kb.eastus.azure.elastic-cloud.com:9243\"}},\"liftrResourceCategory\":\"MonitorLogs\",\"liftrResourcePreference\":0,\"generateApiKey\":false}}",
       "isContentBase64": false
     }
   },
-  "Update-AzElasticMonitor+[NoContext]+UpdateViaIdentityExpanded+$GET+https://management.azure.com/subscriptions/5a611eed-e33a-44e8-92b1-3f6bf835905e/resourceGroups/elastic-rg-3eytki/providers/Microsoft.Elastic/monitors/elastic-d49xjm?api-version=2020-07-01+1": {
+  "Update-AzElasticMonitor+[NoContext]+UpdateViaIdentityExpanded+$GET+https://management.azure.com/subscriptions/cff37b56-870a-448f-a2fb-1a89235d4d32/resourceGroups/elastic-rg-phb54j/providers/Microsoft.Elastic/monitors/elastic-anh81l?api-version=2023-06-01+1": {
     "Request": {
       "Method": "GET",
-      "RequestUri": "https://management.azure.com/subscriptions/5a611eed-e33a-44e8-92b1-3f6bf835905e/resourceGroups/elastic-rg-3eytki/providers/Microsoft.Elastic/monitors/elastic-d49xjm?api-version=2020-07-01",
+      "RequestUri": "https://management.azure.com/subscriptions/cff37b56-870a-448f-a2fb-1a89235d4d32/resourceGroups/elastic-rg-phb54j/providers/Microsoft.Elastic/monitors/elastic-anh81l?api-version=2023-06-01",
       "Content": null,
       "isContentBase64": false,
       "Headers": {
-        "x-ms-unique-id": [ "2" ],
-        "x-ms-client-request-id": [ "aa6d0b19-a518-4efa-8c9b-ff3bd34347bf" ],
+        "x-ms-unique-id": [ "82" ],
+        "x-ms-client-request-id": [ "93d7a1ed-7255-46a6-b2bb-0abd4de0bb63" ],
         "CommandName": [ "Get-AzElasticMonitor" ],
         "FullCommandName": [ "Get-AzElasticMonitor_Get" ],
         "ParameterSetName": [ "__AllParameterSets" ],
-        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "User-Agent": [ "AzurePowershell/v0.0.0", "PSVersion/v7.3.5", "Az.Elastic/0.1.0" ],
         "Authorization": [ "[Filtered]" ]
       },
       "ContentHeaders": {
@@ -59,30 +59,30 @@
       "Headers": {
         "Cache-Control": [ "no-cache" ],
         "Pragma": [ "no-cache" ],
-        "ETag": [ "\"0e006b46-0000-0800-0000-6135d44f0000\"" ],
-        "x-ms-ratelimit-remaining-subscription-reads": [ "11999" ],
+        "ETag": [ "\"9f011aeb-0000-0100-0000-64ad039b0000\"" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11985" ],
         "x-ms-providerhub-traffic": [ "True" ],
-        "x-ms-request-id": [ "6b3a273f-a316-4999-96de-6e4a925f6ec4" ],
-        "x-ms-correlation-request-id": [ "11a64760-6875-4efb-bad6-1495d5a56e4c" ],
-        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20210906T084154Z:11a64760-6875-4efb-bad6-1495d5a56e4c" ],
+        "x-ms-request-id": [ "818f0a11-ea86-4e62-b3d1-53dac6c6b04b" ],
+        "x-ms-correlation-request-id": [ "806d9ba5-9c65-4e3d-9fa8-fe13136d6a60" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20230711T072412Z:806d9ba5-9c65-4e3d-9fa8-fe13136d6a60" ],
         "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
         "X-Content-Type-Options": [ "nosniff" ],
-        "Date": [ "Mon, 06 Sep 2021 08:41:53 GMT" ]
+        "Date": [ "Tue, 11 Jul 2023 07:24:12 GMT" ]
       },
       "ContentHeaders": {
-        "Content-Length": [ "1486" ],
+        "Content-Length": [ "1515" ],
         "Content-Type": [ "application/json; charset=utf-8" ],
         "Expires": [ "-1" ]
       },
-      "Content": "{\"id\":\"/subscriptions/5a611eed-e33a-44e8-92b1-3f6bf835905e/resourceGroups/elastic-rg-3eytki/providers/Microsoft.Elastic/monitors/elastic-d49xjm\",\"name\":\"elastic-d49xjm\",\"type\":\"microsoft.elastic/monitors\",\"sku\":{\"name\":\"ess-monthly-consumption_Monthly\"},\"location\":\"westus2\",\"tags\":{\"key03\":\"3\",\"key02\":\"2\",\"key01\":\"1\"},\"systemData\":{\"createdBy\":\"v-diya@microsoft.com\",\"createdByType\":\"User\",\"createdAt\":\"2021-09-06T07:05:30.881183Z\",\"lastModifiedBy\":\"v-diya@microsoft.com\",\"lastModifiedByType\":\"User\",\"lastModifiedAt\":\"2021-09-06T08:41:50.9789669Z\"},\"properties\":{\"provisioningState\":\"Succeeded\",\"monitoringStatus\":\"Enabled\",\"elasticProperties\":{\"elasticCloudUser\":{\"emailAddress\":\"v-diya@microsoft.com\",\"id\":\"1336629777\",\"elasticCloudSsoDefaultUrl\":\"https://cloud.elastic.co\"},\"elasticCloudDeployment\":{\"name\":\"elastic-d49xjm\",\"deploymentId\":\"5db78d5cb624424eb1283d8d7b4a8150\",\"azureSubscriptionId\":\"5a611eed-e33a-44e8-92b1-3f6bf835905e\",\"elasticsearchRegion\":\"azure-westus2\",\"elasticsearchServiceUrl\":\"https://56054f34d7c745288051e21c9f0a8962.westus2.azure.elastic-cloud.com:9243\",\"kibanaServiceUrl\":\"https://0df5b67b2f2a46e2b4c1523b52ed2e8b.westus2.azure.elastic-cloud.com:9243\",\"kibanaSsoUrl\":\"/sso/v1/go/ec:1336629777:kibana-elastic-d49xjm?acs=https://elastic-d49xjm.kb.westus2.azure.elastic-cloud.com:9243/api/security/saml/callback\u0026sp_login_url=https://elastic-d49xjm.kb.westus2.azure.elastic-cloud.com:9243\"}},\"liftrResourceCategory\":\"MonitorLogs\",\"liftrResourcePreference\":0}}",
+      "Content": "{\"id\":\"/subscriptions/cff37b56-870a-448f-a2fb-1a89235d4d32/resourceGroups/elastic-rg-phb54j/providers/Microsoft.Elastic/monitors/elastic-anh81l\",\"name\":\"elastic-anh81l\",\"type\":\"microsoft.elastic/monitors\",\"sku\":{\"name\":\"ess-monthly-consumption_Monthly\"},\"location\":\"eastus\",\"tags\":{\"key01\":\"1\",\"key02\":\"2\",\"key03\":\"3\",\"PolicyTest\":\"Demo\"},\"systemData\":{\"createdBy\":\"vidai@microsoft.com\",\"createdByType\":\"User\",\"createdAt\":\"2023-07-11T06:58:17.038016Z\",\"lastModifiedBy\":\"vidai@microsoft.com\",\"lastModifiedByType\":\"User\",\"lastModifiedAt\":\"2023-07-11T07:24:10.8854777Z\"},\"properties\":{\"provisioningState\":\"Succeeded\",\"monitoringStatus\":\"Enabled\",\"elasticProperties\":{\"elasticCloudUser\":{\"emailAddress\":\"vidai@microsoft.com\",\"id\":\"1591103226\",\"elasticCloudSsoDefaultUrl\":\"https://cloud.elastic.co\"},\"elasticCloudDeployment\":{\"name\":\"elastic-anh81l\",\"deploymentId\":\"a57239e7425ec918b507ce1751649b33\",\"azureSubscriptionId\":\"cff37b56-870a-448f-a2fb-1a89235d4d32\",\"elasticsearchRegion\":\"azure-eastus\",\"elasticsearchServiceUrl\":\"https://6c6f03a33cb142648af865e14c9f517f.eastus.azure.elastic-cloud.com\",\"kibanaServiceUrl\":\"https://b673d1c749e343e3941d70dae9c8d035.eastus.azure.elastic-cloud.com:9243\",\"kibanaSsoUrl\":\"/sso/v1/go/ec:1836023263:kibana-elastic-anh81l?acs=https://elastic-anh81l.kb.eastus.azure.elastic-cloud.com:9243/api/security/saml/callback\u0026sp_login_url=https://elastic-anh81l.kb.eastus.azure.elastic-cloud.com:9243\"}},\"liftrResourceCategory\":\"MonitorLogs\",\"liftrResourcePreference\":0,\"generateApiKey\":false}}",
       "isContentBase64": false
     }
   },
-  "Update-AzElasticMonitor+[NoContext]+UpdateViaIdentityExpanded+$PATCH+https://management.azure.com/subscriptions/5a611eed-e33a-44e8-92b1-3f6bf835905e/resourceGroups/elastic-rg-3eytki/providers/Microsoft.Elastic/monitors/elastic-d49xjm?api-version=2020-07-01+2": {
+  "Update-AzElasticMonitor+[NoContext]+UpdateViaIdentityExpanded+$PATCH+https://management.azure.com/subscriptions/cff37b56-870a-448f-a2fb-1a89235d4d32/resourceGroups/elastic-rg-phb54j/providers/Microsoft.Elastic/monitors/elastic-anh81l?api-version=2023-06-01+2": {
     "Request": {
       "Method": "PATCH",
-      "RequestUri": "https://management.azure.com/subscriptions/5a611eed-e33a-44e8-92b1-3f6bf835905e/resourceGroups/elastic-rg-3eytki/providers/Microsoft.Elastic/monitors/elastic-d49xjm?api-version=2020-07-01",
-      "Content": "{\r\n  \"tags\": {\r\n    \"key03\": \"3\",\r\n    \"key04\": \"4\",\r\n    \"key02\": \"2\",\r\n    \"key01\": \"1\"\r\n  }\r\n}",
+      "RequestUri": "https://management.azure.com/subscriptions/cff37b56-870a-448f-a2fb-1a89235d4d32/resourceGroups/elastic-rg-phb54j/providers/Microsoft.Elastic/monitors/elastic-anh81l?api-version=2023-06-01",
+      "Content": "{\r\n  \"tags\": {\r\n    \"key01\": \"1\",\r\n    \"key02\": \"2\",\r\n    \"key04\": \"4\",\r\n    \"key03\": \"3\"\r\n  }\r\n}",
       "isContentBase64": false,
       "Headers": {
       },
@@ -96,22 +96,22 @@
       "Headers": {
         "Cache-Control": [ "no-cache" ],
         "Pragma": [ "no-cache" ],
-        "ETag": [ "\"0e006c46-0000-0800-0000-6135d4530000\"" ],
-        "x-ms-ratelimit-remaining-subscription-writes": [ "1198" ],
+        "ETag": [ "\"9f013beb-0000-0100-0000-64ad039d0000\"" ],
+        "x-ms-ratelimit-remaining-subscription-writes": [ "1190" ],
         "x-ms-providerhub-traffic": [ "True" ],
-        "x-ms-request-id": [ "90d0dfff-c56c-40b5-af57-9fd9175a79ae" ],
-        "x-ms-correlation-request-id": [ "15a9453b-4de8-4517-ba40-b3ed3f7beaa0" ],
-        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20210906T084156Z:15a9453b-4de8-4517-ba40-b3ed3f7beaa0" ],
+        "x-ms-request-id": [ "63a24f54-53c3-4470-9fb9-44e2c7d1fb3e" ],
+        "x-ms-correlation-request-id": [ "21f67a9d-0468-42d9-a126-1bd61a03202d" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20230711T072414Z:21f67a9d-0468-42d9-a126-1bd61a03202d" ],
         "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
         "X-Content-Type-Options": [ "nosniff" ],
-        "Date": [ "Mon, 06 Sep 2021 08:41:56 GMT" ]
+        "Date": [ "Tue, 11 Jul 2023 07:24:14 GMT" ]
       },
       "ContentHeaders": {
-        "Content-Length": [ "1497" ],
+        "Content-Length": [ "1527" ],
         "Content-Type": [ "application/json; charset=utf-8" ],
         "Expires": [ "-1" ]
       },
-      "Content": "{\"id\":\"/subscriptions/5a611eed-e33a-44e8-92b1-3f6bf835905e/resourceGroups/elastic-rg-3eytki/providers/Microsoft.Elastic/monitors/elastic-d49xjm\",\"name\":\"elastic-d49xjm\",\"type\":\"microsoft.elastic/monitors\",\"sku\":{\"name\":\"ess-monthly-consumption_Monthly\"},\"location\":\"westus2\",\"tags\":{\"key03\":\"3\",\"key04\":\"4\",\"key02\":\"2\",\"key01\":\"1\"},\"systemData\":{\"createdBy\":\"v-diya@microsoft.com\",\"createdByType\":\"User\",\"createdAt\":\"2021-09-06T07:05:30.881183Z\",\"lastModifiedBy\":\"v-diya@microsoft.com\",\"lastModifiedByType\":\"User\",\"lastModifiedAt\":\"2021-09-06T08:41:55.533663Z\"},\"properties\":{\"provisioningState\":\"Succeeded\",\"monitoringStatus\":\"Enabled\",\"elasticProperties\":{\"elasticCloudUser\":{\"emailAddress\":\"v-diya@microsoft.com\",\"id\":\"1336629777\",\"elasticCloudSsoDefaultUrl\":\"https://cloud.elastic.co\"},\"elasticCloudDeployment\":{\"name\":\"elastic-d49xjm\",\"deploymentId\":\"5db78d5cb624424eb1283d8d7b4a8150\",\"azureSubscriptionId\":\"5a611eed-e33a-44e8-92b1-3f6bf835905e\",\"elasticsearchRegion\":\"azure-westus2\",\"elasticsearchServiceUrl\":\"https://56054f34d7c745288051e21c9f0a8962.westus2.azure.elastic-cloud.com:9243\",\"kibanaServiceUrl\":\"https://0df5b67b2f2a46e2b4c1523b52ed2e8b.westus2.azure.elastic-cloud.com:9243\",\"kibanaSsoUrl\":\"/sso/v1/go/ec:1336629777:kibana-elastic-d49xjm?acs=https://elastic-d49xjm.kb.westus2.azure.elastic-cloud.com:9243/api/security/saml/callback\u0026sp_login_url=https://elastic-d49xjm.kb.westus2.azure.elastic-cloud.com:9243\"}},\"liftrResourceCategory\":\"MonitorLogs\",\"liftrResourcePreference\":0}}",
+      "Content": "{\"id\":\"/subscriptions/cff37b56-870a-448f-a2fb-1a89235d4d32/resourceGroups/elastic-rg-phb54j/providers/Microsoft.Elastic/monitors/elastic-anh81l\",\"name\":\"elastic-anh81l\",\"type\":\"microsoft.elastic/monitors\",\"sku\":{\"name\":\"ess-monthly-consumption_Monthly\"},\"location\":\"eastus\",\"tags\":{\"key01\":\"1\",\"key02\":\"2\",\"key04\":\"4\",\"key03\":\"3\",\"PolicyTest\":\"Demo\"},\"systemData\":{\"createdBy\":\"vidai@microsoft.com\",\"createdByType\":\"User\",\"createdAt\":\"2023-07-11T06:58:17.038016Z\",\"lastModifiedBy\":\"vidai@microsoft.com\",\"lastModifiedByType\":\"User\",\"lastModifiedAt\":\"2023-07-11T07:24:13.1823305Z\"},\"properties\":{\"provisioningState\":\"Succeeded\",\"monitoringStatus\":\"Enabled\",\"elasticProperties\":{\"elasticCloudUser\":{\"emailAddress\":\"vidai@microsoft.com\",\"id\":\"1591103226\",\"elasticCloudSsoDefaultUrl\":\"https://cloud.elastic.co\"},\"elasticCloudDeployment\":{\"name\":\"elastic-anh81l\",\"deploymentId\":\"a57239e7425ec918b507ce1751649b33\",\"azureSubscriptionId\":\"cff37b56-870a-448f-a2fb-1a89235d4d32\",\"elasticsearchRegion\":\"azure-eastus\",\"elasticsearchServiceUrl\":\"https://6c6f03a33cb142648af865e14c9f517f.eastus.azure.elastic-cloud.com\",\"kibanaServiceUrl\":\"https://b673d1c749e343e3941d70dae9c8d035.eastus.azure.elastic-cloud.com:9243\",\"kibanaSsoUrl\":\"/sso/v1/go/ec:1836023263:kibana-elastic-anh81l?acs=https://elastic-anh81l.kb.eastus.azure.elastic-cloud.com:9243/api/security/saml/callback\u0026sp_login_url=https://elastic-anh81l.kb.eastus.azure.elastic-cloud.com:9243\"}},\"liftrResourceCategory\":\"MonitorLogs\",\"liftrResourcePreference\":0,\"generateApiKey\":false}}",
       "isContentBase64": false
     }
   }

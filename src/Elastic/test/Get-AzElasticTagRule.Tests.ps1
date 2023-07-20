@@ -22,8 +22,8 @@ Describe 'Get-AzElasticTagRule' {
     }
 
     It 'GetViaIdentity' {
-        $tagrule = Get-AzElasticTagRule -ResourceGroupName $env.resourceGroup -MonitorName $env.elasticName01
-        $tagrule = Get-AzElasticTagRule -InputObject $tagrule
+        $monitor = Get-AzElasticMonitor -ResourceGroupName $env.resourceGroup -Name $env.elasticName01
+        $tagRule = Get-AzElasticTagRule -MonitorInputObject $monitor
         $tagRule.Name | Should -Be 'default'
     }
 }

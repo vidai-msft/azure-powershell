@@ -16,7 +16,33 @@ if(($null -eq $TestName) -or ($TestName -contains 'New-AzElasticMonitor'))
 
 Describe 'New-AzElasticMonitor' {
     It 'CreateExpanded' {
-        $elastic = New-AzElasticMonitor -ResourceGroupName $env.resourceGroup -Name $env.elasticName03 -Location $env.location -Sku $env.sku -UserInfoEmailAddress $env.userEmail
-        $elastic.ProvisioningState | Should -Be 'Succeeded'
+        $monitor = New-AzElasticMonitor -ResourceGroupName $env.resourceGroup -Name $env.elasticName03 -Location $env.location -Sku $env.sku -UserInfoEmailAddress $env.userEmail
+        $monitor.ProvisioningState | Should -Be 'Succeeded'
+    }
+
+    It 'CreateViaJsonString' {
+        $monitorProps = @{
+            location   = $env.location
+            sku        = @{
+                name = $env.sku
+            }
+            properties = @{
+                userInfo = @{
+                    emailAddress = $env.userEmail
+                    companyName  = "Contoso"
+                    companyInfo  = @{
+                        country = "United States"
+                        state   = "WA"
+                    }
+                }
+            }
+        }
+        $monitorPropsJson = ConvertTo-Json -InputObject $monitorProps -Depth 5
+        $monitor = New-AzElasticMonitor -ResourceGroupName $env.resourceGroup -Name $env.elasticName04 -JsonString $monitorPropsJson
+        $monitor.ProvisioningState | Should -Be 'Succeeded'
+    }
+
+    It 'CreateViaJsonFilePath' -Skip {
+
     }
 }
